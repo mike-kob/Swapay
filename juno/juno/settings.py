@@ -136,9 +136,6 @@ SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 sentry_sdk.init(dsn=os.getenv("SENTRY_DNS"), integrations=[DjangoIntegration()], send_default_pii=True)
 
 
-AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_S3_BUCKET_NAME")
-AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
-
 STATIC_URL = "/teammates/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
