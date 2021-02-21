@@ -104,37 +104,33 @@ query ($language: String!, $slug: String!) {
   gameTag(language: $language, slug: $slug) {
     id
     ukSlug
-    ruSlug
+    enSlug
     ukName
-    ruName
+    enName
     games {
       id
       ukTitle
-      ruTitle
+      enTitle
       ukPreview
-      ruPreview
+      enPreview
       types
       tags {
         id
         ukName
-        ruName
+        enName
       }
       photos {
         id
         main
-        file
-        fileV2Webp
-        fileV2Jpeg
-        file350V2Webp
-        file350V2Jpeg
+        publicId
       }
       preview
     }
     tagType
     ukMetaDescription
-    ruMetaDescription
+    enMetaDescription
     ukContent
-    ruContent
+    enContent
   }
 }
 

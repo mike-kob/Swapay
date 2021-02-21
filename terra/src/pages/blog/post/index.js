@@ -10,7 +10,6 @@ import Head from 'next/head';
 import {FormattedMessage} from 'react-intl';
 import Router, {useRouter} from 'next/router';
 
-import '../common.css';
 import Header from '../../../components/Header';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 

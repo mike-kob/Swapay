@@ -1,6 +1,6 @@
-import {ssrQueryStatic} from '../../../utils/graphqlSsr';
-import {GAME_TAGS_QUERY} from '../../../gql/privateItem';
-import {CATALOG_TAG_QUERY} from '../../../gql/static';
+import {ssrQueryStatic} from '@/utils/graphqlSsr';
+import {GAME_TAGS_QUERY} from '@/gql/privateItem';
+import {CATALOG_TAG_QUERY} from '@/gql/static';
 
 export async function getStaticPaths(context) {
   const tags = await ssrQueryStatic(GAME_TAGS_QUERY, {}, context);
@@ -15,8 +15,8 @@ export async function getStaticPaths(context) {
     });
     paths.push({
       params: {
-        'lang': 'ru',
-        'tag': tag.ruSlug,
+        'lang': 'en',
+        'tag': tag.enSlug,
       },
     });
   }

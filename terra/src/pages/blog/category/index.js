@@ -7,8 +7,6 @@ import BlogPostSlot from '../common/BlogPostSlot';
 import Router, {useRouter} from 'next/router';
 import Head from 'next/head';
 
-import '../common.css';
-
 const useStyles = makeStyles((theme) => ({
   breadcrumb: {
     fontStyle: 'normal',
