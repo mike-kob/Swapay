@@ -1,0 +1,67 @@
+.message {
+    display: flex;
+    flex-direction: column;
+}
+
+.timestamp {
+    display: flex;
+    justify-content: center;
+    color: #999;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 10px 0px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 576px) {
+    .timestamp {
+         font-size: 8px;
+    }
+}
+
+.bubble_container {
+    font-size: 18px;
+    display: flex;
+}
+
+.my-time {
+    text-align: right;
+    color: white;
+}
+
+.client-time {
+    text-align: right;
+    color: gray;
+}
+
+.mine {
+    margin-left: auto;
+}
+
+
+.bubble_container{
+    overflow-wrap: break-word;
+    margin: 0 8px;
+}
+
+.otherbubble {
+    margin-bottom: 10px;
+    font-weight: 500;
+    background: #E2DFDB;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px 8px 8px 0;
+    max-width: 75%;
+    color: black;
+    margin-top: 10px;
+}
+
+.bubble {
+    border-radius: 8px 8px 0 8px;
+    margin-bottom: 10px;
+    padding: 10px 15px 10px 15px;
+    max-width: 75%;
+    font-weight: 500;
+    background: #ED5A29;
+    color: white;
+    margin-top: 10px;
+}

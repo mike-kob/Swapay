@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: /*/user/
+
+User-agent: *
+Disallow: /*/profile/
+Allow: /
+
+Sitemap: https://swapay.co.ua/sitemap.xml

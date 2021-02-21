@@ -1,0 +1,28 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({
+      selector: '.field-content textarea, .field-uk_content textarea, .field-ru_content textarea',
+      plugins: 'advlist link image lists fullscreen autoresize code',
+      toolbar: 'code | fullscreen | undo redo | styleselect | fontselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | image',
+      lists_indent_on_tab: false,
+      image_advtab: true,
+      image_dimensions: false,
+      image_class_list: [
+        {title: 'Responsive', value: 'img-responsive'}
+      ],
+      font_formats:
+        "Default=Montserrat,-apple-system,BlinkMacSystemFont,sans-serif; Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats"
+    });</script>
+
+    <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+    {{ block.super }}
+    <style>
+        #header #navigation-menu {
+            z-index: 0;
+        }
+    </style>
+
+
+{% endblock %}

@@ -1,0 +1,2 @@
+class ItemActivationException(Exception):
+    pass

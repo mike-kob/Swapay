@@ -1,0 +1,38 @@
+#content ul {
+	padding-left: 40px;
+	list-style: disc;
+}
+
+@media (max-width: 600px) {
+	#content ul {
+		padding-left: 24px;
+	}
+}
+
+#content p {
+	margin-top: 24px;
+	color: rgb(41, 41, 41);
+}
+
+#content h2 {
+	display: block;
+	font-size: 1.5em;
+	margin-top: 1.95em;
+	font-weight: bold;
+	color: rgb(41, 41, 41);
+}
+
+#category-content p {
+	margin: 8px 0;
+	color: #0000007a;
+}
+
+.img-responsive {
+	max-width: 750px;
+	max-height: 450px;
+	width: 95%;
+	height: 100%;
+	object-fit: contain;
+	margin: auto;
+	display: block;
+}

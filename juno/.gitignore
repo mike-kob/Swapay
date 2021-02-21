@@ -1,0 +1,15 @@
+*.pyc
+.idea
+static
+*.sqlite3
+*.mo
+.env
+venv
+.vscode
+mediafiles
+mailing
+ssl
+.coverage
+credentials.json
+creds.json
+.env.old
