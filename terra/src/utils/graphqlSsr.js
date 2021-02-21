@@ -1,8 +1,6 @@
 import axios from 'axios';
 import cookie from 'cookie';
 
-const STATIC_HOST = 'http://localhost:8000';
-
 export async function ssrQuery(query, vars, ctx) {
   console.log('SSR QUERY');
   const cookies = cookie.parse(ctx.req.headers.cookie || '');
@@ -34,7 +32,7 @@ export async function ssrQueryStatic(query, vars) {
   };
 
   const res = await axios.post(
-      STATIC_HOST + '/gql/',
+      process.env.STATIC_HOST + '/gql/',
       {query: query, variables: JSON.stringify(vars)},
       {
         headers: headers,
