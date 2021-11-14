@@ -11,3 +11,6 @@ RUN pipenv install --system --deploy
 RUN apt-get update && apt-get -y install gettext
 
 COPY . .
+
+
+RUN mkdir static && python manage.py collectstatic --noinput
