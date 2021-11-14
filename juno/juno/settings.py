@@ -15,6 +15,7 @@ import os
 import sentry_sdk
 from dotenv import load_dotenv
 from sentry_sdk.integrations.django import DjangoIntegration
+import django_heroku
 
 load_dotenv()
 
@@ -25,7 +26,7 @@ RUN_ENV = os.environ.get("RUN_ENV")
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "super-secret-#-key")
 
-DEBUG = RUN_ENV == "DEV"
+DEBUG = RUN_ENV == 'DEV'
 
 DEFAULT_HOST = os.environ.get("DEFAULT_HOST")
 
@@ -136,8 +137,8 @@ SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 sentry_sdk.init(dsn=os.getenv("SENTRY_DNS"), integrations=[DjangoIntegration()], send_default_pii=True)
 
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/teammates/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 LANGUAGE_CODE = "uk"
@@ -157,6 +158,6 @@ LANGUAGES = [
     ("ru", "Russian"),
 ]
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
+
+django_heroku.settings(locals())

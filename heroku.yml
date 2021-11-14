@@ -1,0 +1,5 @@
+build:
+  docker:
+    web: juno/Dockerfile
+run:
+  web: gunicorn juno.wsgi:application --bind 0.0.0.0:$PORT

@@ -2,7 +2,7 @@ import axios from 'axios';
 import cookie from 'cookie';
 
 export async function ssrQuery(query, vars, ctx) {
-  console.log('SSR QUERY');
+  console.log('SSR QUERY to', `${process.env.PROXY_HOST}/gql/`);
   const cookies = cookie.parse(ctx.req.headers.cookie || '');
   const token = cookies['csrftoken'];
 
@@ -20,7 +20,7 @@ export async function ssrQuery(query, vars, ctx) {
         headers: headers,
       });
 
-
+  console.log('SSR QUERY result', res, res.status);
   return res.data;
 }
 
