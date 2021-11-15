@@ -18,6 +18,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 import django_heroku
 import dj_database_url
 
+
 load_dotenv()
 
 
