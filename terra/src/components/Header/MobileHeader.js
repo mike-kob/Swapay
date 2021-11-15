@@ -41,7 +41,7 @@ const MobileHeader = (props) => {
   const anchor = 'right';
   const classes = useStyles();
   const router = useRouter();
-  const lang = router.query.lang;
+  const lang = router.query.lang || 'en';
   const {user} = props;
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -65,7 +65,7 @@ const MobileHeader = (props) => {
   return (
     <AppBar position="static" color="primary" elevation={0} className={classes.nav}>
       <Toolbar className={classes.header}>
-        <Link href={'/'}>
+        <Link href={`/`}>
           <a><img src="/small-logo.svg" className={classes.logo} /></a>
         </Link>
 

@@ -176,20 +176,6 @@ export default function SwipeableTemporaryDrawer(props) {
               </List>
             </Collapse>
           </List>
-          <List disablePadding>
-            <Divider/>
-            <ListItem className={classes.sectionHeader}>
-              <Link href="/blog">
-                <a className={classes.rightPanelItem}>
-                  <FormattedMessage
-                    id="blog.blog"
-                    defaultMessage="Blog"
-                  />
-                </a>
-              </Link>
-            </ListItem>
-            <Divider/>
-          </List>
           <div className={classes.changeLanguage}>
             <span
               className={clsx(lang === 'en' ? classes.activeLanguage : classes.targetLanguage)} {...ruProps}>EN</span>

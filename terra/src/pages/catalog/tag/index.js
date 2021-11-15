@@ -14,7 +14,7 @@ const TagCatalog = (props) => {
 
   const urls = {
     'uk': `/uk/catalog/${tag.ukSlug}`,
-    'ru': `/ru/catalog/${tag.ruSlug}`,
+    'en': `/en/catalog/${tag.enSlug}`,
   };
 
   return (
@@ -26,15 +26,7 @@ const TagCatalog = (props) => {
           {tag[`${router.query.lang}Name`]}
           {' - Swapay'}
         </title>
-        <link rel="alternate" hrefLang={'uk'} href={'https://swapay.co.ua' + urls['uk']}/>
-        <link rel="alternate" hrefLang={'ru'} href={'https://swapay.co.ua' + urls['ru']}/>
         <meta name="description" content={tag[`${router.query.lang}MetaDescription`]}/>
-
-        <meta property="og:title" content={tag[`${router.query.lang}Name`]}/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:description" content={tag[`${router.query.lang}MetaDescription`]}/>
-        <meta property="og:site_name" content="Swapay"/>
-        <meta property="og:url" content={`https://swapay.co.ua` + urls[router.query.lang]}/>
 
       </Head>
       <Header onLanguageChange={(lang) => router.push(urls[lang])}/>

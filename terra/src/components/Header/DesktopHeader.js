@@ -76,14 +76,14 @@ const useStyles = makeStyles((theme) => ({
 const DesktopHeader = (props) => {
   const {user} = props;
   const router = useRouter();
-  const lang = router.query.lang;
-  const ruProps = {};
+  const lang = router.query.lang || 'en';
+  const enProps = {};
   const ukProps = {};
   if (lang === 'uk') {
     if (props.onLanguageChange) {
-      ruProps.onClick = () => props.onLanguageChange('ru');
+      enProps.onClick = () => props.onLanguageChange('en');
     } else {
-      ruProps.onClick = () => router.push(router.route.replace('[lang]', 'ru'));
+      enProps.onClick = () => router.push(router.route.replace('[lang]', 'en'));
     }
   } else {
     if (props.onLanguageChange) {
@@ -120,14 +120,6 @@ const DesktopHeader = (props) => {
               />
             </a>
           </Link>
-          <Link href="/blog">
-            <a className={classes.rightPanelItem}>
-              <FormattedMessage
-                id="blog.blog"
-                defaultMessage="Blog"
-              />
-            </a>
-          </Link>
         </div>
         <div className={classes.leftPanel}>
           <div>
@@ -140,7 +132,7 @@ const DesktopHeader = (props) => {
           </div>
           <div className={classes.changeLanguage}>
             <span
-              className={clsx(lang === 'en' ? classes.activeLanguage : classes.targetLanguage)} {...ruProps}>EN</span>
+              className={clsx(lang === 'en' ? classes.activeLanguage : classes.targetLanguage)} {...enProps}>EN</span>
             {' | '}
             <span
               className={clsx(lang === 'uk' ? classes.activeLanguage : classes.targetLanguage)} {...ukProps}>UK</span>
