@@ -106,8 +106,8 @@ class GameTagsQuery:
         tags = GameTag.objects.none()
         if language == "uk":
             tags = GameTag.objects.filter(uk_slug=slug)
-        if language == "ru":
-            tags = GameTag.objects.filter(ru_slug=slug)
+        if language == "en":
+            tags = GameTag.objects.filter(en_slug=slug)
 
         return tags.filter(published=True).first()
 
