@@ -16,6 +16,7 @@ import sentry_sdk
 from dotenv import load_dotenv
 from sentry_sdk.integrations.django import DjangoIntegration
 import django_heroku
+import dj_database_url
 
 load_dotenv()
 
@@ -66,14 +67,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "juno.urls"
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME"),
-        "USER": os.environ.get("DB_USER"),
-        "PASSWORD": os.environ.get("DB_PASSWORD"),
-        "HOST": os.environ.get("DB_HOST"),
-        "PORT": os.environ.get("DB_PORT", "5432"),
-    }
+    "default": dj_database_url.config(conn_max_age=600)
 }
 
 
