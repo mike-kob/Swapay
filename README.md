@@ -4,7 +4,6 @@ Swapay (comes from "to swap") is a pet-project marketplace designed for people
 to share (exhange, sell, rent) their board games that they might not need
 at the moment.
 
-Demo: [swapay.vercel.app](https://swapay.vercel.app/en) \
 Available languages: `en`, `uk` 
 
 ## Project structure
